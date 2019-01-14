@@ -14,14 +14,24 @@ function User(name, score, age, ipaddress)
   //display user information
   this.display = function() {
   console.log(this.userName + " with the ip address: " + this.userIp 
-  + " has a score of: " + this.userScore + "\n"); }
+  + " has a score of: " + this.userScore + " And age " + this.userAge + "\n"); }
   
   //changes users name
   this.setName = function(newName) {
   	this.userName = newName;
-  	console.log(this.userName);
+  	//console.log(this.userName);
   }
+
+//testing prototype
+  User.prototype.checkAge = function(newName) {
+  	console.log(this.userAge);
+  	if(this.userAge >= 18)
+  		console.log("User is an adult");
+  	else
+  		console.log("User must have permission");
+  }  
 }
+
 
 
 function main()
@@ -30,8 +40,8 @@ function main()
   firstUser.display();
   firstUser.setName("Ben");
 
-  //
-
+  
+  firstUser.checkAge();
 
 }
 
